@@ -5,56 +5,52 @@ Automatic Tank Gauging (ATG) System
 This project implements an **Automatic Tank Gauging** system designed for industrial liquid level monitoring. It utilizes the **Modbus Protocol** to facilitate communication between field devices (PLC) and the **Haiwell SCADA** visualization platform.
 
 *******************
-System Architecture
-*******************
-
-The system follows a standard industrial automation hierarchy:
-1. **Field Level:** Level sensors or transmitters.
-2. **Control Level:** PLC (Programmable Logic Controller) programmed to read sensor data.
-3. **Supervisory Level:** Haiwell SCADA for HMI visualization and data logging.
-4. **Connectivity:** MQTT protocol integration for remote monitoring and IoT capabilities.
-
-*******************
 Key Features
 *******************
 
-- **Real-time Monitoring:** Live visualization of tank levels, volume, and temperature.
-- **Modbus Communication:** Reliable data exchange using Modbus RTU/TCP.
-- **Alarm System:** High-level and low-level alerts configured within the SCADA environment.
-- **MQTT Integration:** Bridge industrial data to cloud platforms or mobile dashboards.
-- **Historical Logging:** Data archiving for inventory trend analysis.
+- **Real-time Monitoring:** Live visualization of tank levels, volume, and temperature status.
+- **Modbus Communication:** Reliable data exchange using Modbus RTU/TCP protocols.
+- **MQTT Integration:** Seamless data bridging to cloud platforms for remote IoT monitoring.
+- **Alarm System:** Automated alerts for high-level and low-level inventory thresholds.
 
 **************************
-Technologies & Hardware
+Technical Specifications
 **************************
 
-- **Software:** Haiwell Cloud SCADA, HaiwellHappy (PLC Programming).
-- **Protocols:** Modbus RTU, Modbus TCP, MQTT.
-- **Hardware:** Haiwell PLC / HMI (or compatible Modbus devices).
+- **Software:** Haiwell Cloud SCADA & HaiwellHappy (PLC Programming)
+- **Protocols:** Modbus RTU, Modbus TCP, and MQTT
+- **Hardware:** Haiwell PLC / HMI (or compatible Modbus-enabled devices)
+- **Application:** Industrial Inventory and Fuel Tank Monitoring
 
 *******************
-Project Structure
+Installation Guide
 *******************
 
-- ``/program`` : Contains the PLC logic files (e.g., .hwps).
-- ``/scada`` : Haiwell SCADA project files and HMI screens.
-- ``/docs`` : Wiring diagrams or communication maps.
+1. **Clone the Project**
+   .. code-block:: bash
 
-*******************
-How to Use
-*******************
+      git clone https://github.com/afafirmansyah/automatic-tank-gauging.git
 
-1. **Hardware Setup:** Ensure your PLC is wired to the sensors and connected via RS485 or Ethernet.
-2. **PLC Logic:** Upload the program provided in the ``/program`` folder using HaiwellHappy.
-3. **SCADA Configuration:** - Open the SCADA project in Haiwell Cloud Software.
-   - Configure the IP/Com Port settings to match your hardware.
-4. **Run:** Start the SCADA runtime to begin monitoring.
+2. **Hardware Setup**
+   - Connect your sensors to the PLC analog/digital input modules.
+   - Ensure the RS485 or Ethernet communication cable is properly wired between the PLC and the SCADA PC/HMI.
+
+3. **PLC Configuration**
+   - Open the project file in the ``/program`` folder using **HaiwellHappy**.
+   - Compile and download the logic to your PLC hardware.
+
+4. **SCADA Configuration**
+   - Open the SCADA project using **Haiwell Cloud Software**.
+   - Update the Communication Settings (IP Address or COM Port) to match your hardware configuration.
+
+5. **Launch**
+   - Run the SCADA project to start the real-time monitoring dashboard.
 
 *******
 License
 *******
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the `license.txt` file for details.
 
 *********
 Contact
